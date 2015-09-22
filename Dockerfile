@@ -19,7 +19,8 @@ RUN apt-get update
 RUN apt-get install -y tar git curl nano wget dialog net-tools build-essential
 
 # Install Python and Basic Python Tools
-RUN apt-get install -y python python-dev python-distribute python-pip zlib1g-dev libpq-dev python-lxml
+RUN apt-get install -y python python-dev python-distribute python-pip zlib1g-dev libpq-dev
+# python-lxml
 
 
 # Copy the application folder inside the container
