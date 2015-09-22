@@ -10,11 +10,13 @@ FROM phusion/passenger-full:latest
 MAINTAINER Charles Offenbacher
 
 # Copy the application folder inside the container
-ADD worker /worker
+
 
 # Get pip to download and install requirements:
 RUN apt-get update
 RUN apt-get -y install python-pip
+
+ADD worker /worker
 RUN pip install -r /worker/requirements.txt
 
 # Expose ports
