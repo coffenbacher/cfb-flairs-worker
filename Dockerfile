@@ -14,8 +14,8 @@ ADD worker /worker
 
 # Get pip to download and install requirements:
 RUN apt-get update
-RUN apt-get install -y python-pip
-RUN pip install --allow-all-external -r /worker/requirements.txt 
+RUN apt-get -y install python-pip
+RUN pip install -r /worker/requirements.txt
 
 # Expose ports
 # EXPOSE 80
@@ -30,4 +30,4 @@ ENV RETHINKDB_PORT=""
 # Set the default command to execute    
 # when creating a new container
 # i.e. using CherryPy to serve the application
-CMD python worker.py
+CMD python worker/worker.py
