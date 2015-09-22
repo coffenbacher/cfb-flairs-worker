@@ -13,8 +13,9 @@ MAINTAINER Charles Offenbacher
 ADD worker /worker
 
 # Get pip to download and install requirements:
-RUN apt-get install python-pip
-RUN pip install -r /worker/requirements.txt
+RUN apt-get update
+RUN apt-get install -y python-pip
+RUN pip install --allow-all-external -r /worker/requirements.txt 
 
 # Expose ports
 # EXPOSE 80
