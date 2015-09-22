@@ -13,6 +13,7 @@ MAINTAINER Charles Offenbacher
 ADD worker /worker
 
 # Get pip to download and install requirements:
+RUN apt-get install python-pip
 RUN pip install -r /worker/requirements.txt
 
 # Expose ports
