@@ -30,4 +30,4 @@ ENV RETHINKDB_PORT=""
 # Set the default command to execute    
 # when creating a new container
 # i.e. using CherryPy to serve the application
-CMD python worker/worker.py
+CMD python worker.py
