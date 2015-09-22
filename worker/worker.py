@@ -43,10 +43,9 @@ def extract_data():
     db = get_db()
     current_progress = db.table('progress').get('current').run(c)
     start = epoch(current_progress.get('epoch'))
-    end = start + timedelta(days=2)
     
     # Only get posts for one day at a time
-    for group in get_posts_between_dates(start, end):
+    for group in get_posts_between_dates(start, Delorean()):
         for post in group:
             logging.info('Inserting post %s' % post.id)
             results = db.table('post').insert({
