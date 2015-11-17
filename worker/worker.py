@@ -86,4 +86,4 @@ def extract_data():
 if __name__ == "__main__":
     setup_tables()
     extract_data()
-    time.sleep(int(os.getenv('DELAY')))
+    time.sleep(int(os.getenv('DELAY', 0)))
